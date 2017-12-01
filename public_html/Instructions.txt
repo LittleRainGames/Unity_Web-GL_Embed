@@ -1,0 +1,35 @@
+For a Full tutorial on how to do this yourself, without these files visit https://www.littleraingames.com/tutorials/unity_webgl_embedding
+If you use wordpress or other website builders you may want to follow the tutorial, or atleast find out how to add code to the head of a page.
+I do go over both extensivly though.
+
+
+Build your web GL game in Unity. 
+In the folder it creates, replace the file build/UnityLoader.js with public_html/page_with_game/WebGL_Game/Build/UnityLoader.js
+
+Now from the same folder, replace TagetData/styles.css with public_html/page_with_game/WebGL_Game/TagetData/styles.css
+
+Now on the webpage you want to display your game on, open the index.html.
+If you look in the example, which is public_html/page_with_game/index.html you will see I added comments.
+
+If you try the example on a local machine it doesn't seem to want to work, but it does work once its uploaded.
+Here is the URL to the exact same example https://www.littleraingames.com/tutorials/unity_webgl_embedding/WebGL_example/Page_With_Game/index.html
+
+
+
+
+The ones you want to look for is Head Code, and Page Code.
+
+
+Copy everything in the Head Code and paste it in your index.html, within the <head> </head>
+Now you need to change the URL's to your games files.
+
+Make sure you upload the file public_html/styles/unity_webgl.css to your server, and reference that. 
+You could always keep that URL the same, but you may want to change it later.
+
+
+
+Now copy the Page Code and paste it where you would like on your site, you should not have to change anything here.
+
+
+Thats it, your done!
+

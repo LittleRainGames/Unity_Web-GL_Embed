@@ -1,0 +1,160 @@
+
+
+<!--The only code you need to worry about is the <Head Code> and the <Page Code>, everything else is an example to show you where it needs to go.-->
+<!--A full tutorial on how to do it here. http://www.littleraingames.com/tutorials/unity_webgl_embedding/ -->
+<!--For some reason if you open this file in a browser the game does not want to play, this example page is here. https://www.littleraingames.com/tutorials/unity_webgl_embedding/WebGL_example/Page_With_Game/index.html --> 
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Unity WebGL Embedding Example</title>
+    <link rel="stylesheet" href="https://www.littleraingames.com/tutorials/unity_webgl_embedding/WebGL_example/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.littleraingames.com/tutorials/unity_webgl_embedding/WebGL_example/assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="https://www.littleraingames.com/tutorials/unity_webgl_embedding/WebGL_example/assets/css/Footer-Clean.css">
+    <link rel="stylesheet" href="https://www.littleraingames.com/tutorials/unity_webgl_embedding/WebGL_example/assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="https://www.littleraingames.com/tutorials/unity_webgl_embedding/WebGL_example/assets/css/styles.css">
+	
+	<!--Head Code-->
+	
+		<!--Remember to update these URL's your games files.-->
+    <link rel="stylesheet" href="../styles/unity_webgl.css">
+	<link rel="shortcut icon" href="https://www.littleraingames.com/downloads/games/bound/webGL/TemplateData/favicon.ico">
+    <link rel="stylesheet" href="https://www.littleraingames.com/downloads/games/bound/webGL/TemplateData/style.css">
+    <script src="https://www.littleraingames.com/downloads/games/bound/webGL/TemplateData/UnityProgress.js"></script>  
+    <script src="https://www.littleraingames.com/downloads/games/bound/webGL/Build/UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "https://www.littleraingames.com/downloads/games/bound/webGL/Build/LudumDare38Compo_Bound-WebGL.json", {onProgress: UnityProgress});
+    </script>
+	<!--/Head Code-->
+</head>
+
+<body>
+
+ <!--Example Header-->
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+            <div class="container"><a class="navbar-brand" href="#">Company Name</a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#">First Item</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#">Second Item</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#">Third Item</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Dropdown </a>
+                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+	 <!--/Example Header-->
+	
+    <div style="background-color:#333333;">
+        <div class="container">
+            <div class="row">
+			
+			<!--Example Side Bar-->
+                <div class="col-md-4">
+                    <div style="padding:30px 10px;">
+                        <h1 class="text-center">Sidebar</h1>
+                        <p class="text-center">This is a side bar</p>
+                        <p class="text-center">The example game I provided's UI will not look correct unless it is in fullscreen. This does not have to do with the HTML, it was a game jam game and I did not have enough time to fix it. Yours will not have this issue.</p>
+                        <p class="text-center">Try resizing your browser window, you can see that it is responsive. When you make it too small it will hide the game and show a message saying that Web GL is not available on mobile.</p>
+                    </div>
+                </div>
+				<!--/Example Side Bar-->
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-10 offset-md-1" style="padding:30px 15px;padding-bottom:30px;">
+                            <h3 class="text-center" style="color:#dddddd;">Game Name</h3>
+							
+<!--Page Code-->
+							
+							<!--No Mobile Message-->
+							 <div class="u-webgl_sorry" style="padding-top:20px;padding-bottom:20;background-color:#191919;">
+                        <h6 class="text-center" style="font-family:Changa, sans-serif;">-Sorry but Web GL is not available on Mobile-</h6>
+                        <p class="text-center" style="font-family:Changa, sans-serif;">If you are on a desktop you may just need to expand the window</p>
+                    </div>
+					<!--/No Mobile Message-->
+					
+					<!--Game Container-->
+					
+					<!--Depending on how big the div you place this in, you may need to edit the unity_webGL.css file to change the width and height for the different screen sizes.-->					
+                    <div class="u-webgl c">
+						<div class="webgl-content" style="margin:auto;">
+							<div id="gameContainer" class="u-webgl h u-webgl w">            
+							</div>   
+						<div class="footer" style="u-webgl w">
+							<div class="webgl-logo"></div> <!--Remove this line if you do not want to show the Unity Logo.-->
+							<div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+							<div class="title">Game Name</div>   <!--Remove this line if you don't want your game name. Recommended if its somewhere else on the page.-->     						
+					</div>
+</div>
+			<!--/Game Container-->
+<!--/Page Code -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div style="padding-bottom:15px;padding-top:15px;"></div>
+            <div class="row">
+                <div class="col">
+                    <h4 class="text-center" style="color:#dddddd;">How to Play</h4>
+                    <p style="color:#dddddd;">How to play</p>
+                </div>
+                <div class="col">
+                    <h4 class="text-center" style="color:#dddddd;">About </h4>
+                    <p style="color:#dddddd;">About your game.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+	 <!--Example Footer -->
+    <div class="footer-clean" style="background-color:#191919;">
+        <footer>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Legacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Careers</h3>
+                        <ul>
+                            <li><a href="#">Job openings</a></li>
+                            <li><a href="#">Employee success</a></li>
+                            <li><a href="#">Benefits</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+                        <p class="copyright">Company Name © 2017</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+	 <!--/Example Footer-->
+	 
+    <script src="https://www.littleraingames.com/tutorials/unity_webgl_embedding/WebGL_example/assets/js/jquery.min.js"></script>
+    <script src="https://www.littleraingames.com/tutorials/unity_webgl_embedding/WebGL_example/assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
